@@ -1,0 +1,59 @@
+<!--<input ng-model="searchContent" ng-change="search('author')"/>-->
+<form class="form-horizontal" action="/save" method="post">
+    <div class="form-group">
+        <label class="control-label col-md-4"> ISBN </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.isbn" placeholder="ISBN" name="isbn"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4"> Book Title</label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.title" placeholder="Book Title" name="title"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-4"> Book Author </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.author" ng-change="search('author')" placeholder="Book Author" name="author"/>
+            
+        </div>
+    </div>
+    
+    <div class="form-group"  style="display: none;">
+        <label class="control-label col-md-4"> Book Author ID </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.authorId" name="authorId"/>
+        </div>
+    </div>
+    
+    <ol class="col-md-offset-4 col-md-8">
+    <li ng-repeat="i in  bookList">
+        <input type="radio" ng-click="assignAuthor(i.authorName,i.authorId)"/><a href="/editAuthor/authorName/{{i.authorId}}">{{i.authorName}}</a>
+    </li>
+    </ol>
+    
+    
+    <div class="form-group">   
+        <label class="control-label col-md-4"> Book Price</label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="book.price" placeholder="Book Price" name="price"/>
+        </div>
+    </div>
+    <div class="form-group">    
+        <label class="control-label col-md-4"> Available on</label>
+        <div class="col-md-8">
+            <textArea class="form-control" ng-model="book.avail" type="text" name="avail"></textArea>
+        </div>
+    </div>    
+        <input style="display: none;" ng-model="book.bookId" name="bookId"/>
+        
+    <div class="form-group">    
+        <div class="col-md-offset-4 col-md-8">
+            <input class="btn btn-primary" type="submit" value="Add New Book"/>
+        </div>
+    </div>
+        <input type="text" name="content" style="display: none;" value="book"/>
+</form>
+
+

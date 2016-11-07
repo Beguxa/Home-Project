@@ -1,0 +1,50 @@
+<form class="form-horizontal" action="/save" method="post">
+    <div class="form-group">
+        <label class="control-label col-md-4"> Author Id </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="Author.authorId" placeholder="ID" name="authorId"/>
+        </div>
+    </div>
+            
+    <div class="form-group">
+        <label class="control-label col-md-4"> Name </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="Author.authorName" placeholder="Name" name="authorName"/>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-md-4"> Email </label>
+        <div class="col-md-8">
+            <input class="form-control" ng-model="Author.email" placeholder="Email" name="email"/>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-md-4"> Department </label>
+        <div class="col-md-8">        
+            <input class="form-control" ng-model="Author.dept" placeholder="Department" name="dept"/>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label class="control-label col-md-4"> Website </label>
+        <div class="col-md-8">        
+            <input class="form-control" ng-model="Author.website" placeholder="Website" name="website"/>
+        </div>
+    </div>
+    
+     <div class="form-group">
+        <label class="control-label col-md-4"> Skills </label>
+        <div class="col-md-8">       
+            <textArea class="form-control" ng-model="Author.skills" type="text" name="skills"></textArea>
+        </div>
+    </div>
+     
+    <div class="form-group">    
+        <div class="col-md-offset-4 col-md-8">
+            <input class="btn btn-primary" type="submit" value="Add New Author"/>
+        </div>
+    </div>
+    <input type="text" name="content" style="display: none;" value="author"/>
+</form>

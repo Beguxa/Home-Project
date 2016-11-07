@@ -1,0 +1,41 @@
+doctype html
+html
+    head
+        title Library Management System
+        script(src="angular.min.js")
+        script(src="route.js")
+        script(src="main.js")
+        script(src="jquery-1.3.2.js")
+        script(src="bootstrap.min.js")
+        link(rel="stylesheet" type="text/css" href="bootstrap.min.css")
+        link(rel="stylesheet" type="text/css" href="default.css")
+    body    
+        .container(ng-app="mainApp" ng-controller="mainController")
+            .row.myTopPadding
+                .col-md-6(style="padding-left:10%")
+                    a(class="btn btn-default myAddButtons" href="/addBook") Add Book
+                .col-md-6.myRightAlign(style="padding-right:10%")
+                    a(class="btn btn-default myAddButtons" href="/addAuthor") Add Author
+            .row
+                .col-md-offset-2.col-md-8
+                    .row.myTopPadding
+                        div(class="input-group stylish-input-group")
+                            input(class="form-control" ng-model="searchContent" placeholder="Enter Book Title")
+                            span(class="input-group-addon" ng-click="search('book')")
+                                a(href="" class="myAnchor") Search
+                    .row.myTopPadding
+                        table(class="table table-bordered")
+                            thead
+                                tr
+                                    th ISBN
+                                    th Book-Title
+                                    th Author Name
+                            tbody
+                                tr(ng-repeat="x in bookList") 
+                                    td
+                                        a(class="myAnchor" href="/edit/id/{{x.bookId}}/content/Book") {{x.isbn}}
+                                    td {{x.title}}
+                                    td
+                                        a(class="myAnchor" href="/edit/id/{{x.authorId}}/content/Author") {{x.author}}
+                                                        
+                                

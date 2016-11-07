@@ -1,0 +1,16 @@
+doctype html
+html
+        head
+                script(src="angular.min.js")
+                script(src="route.js")
+                script(src="main.js")
+                script(src="jquery-1.3.2.min.js")
+                script(src="bootstrap.min.js")
+                link(rel="stylesheet" type="text/css" href="bootstrap.min.css")
+                link(rel="stylesheet" type="text/css" href="default.css")
+        body
+                .container(ng-app="authorApp" ng-controller="authorController")
+                    .row
+                        .col-md-offset-2.col-md-8
+                    .row
+                        div(ng-view="")
